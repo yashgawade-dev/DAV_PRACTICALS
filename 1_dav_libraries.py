@@ -1,0 +1,27 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+print("--- 1. NumPy Operations ---")
+arr = np.arange(1, 11)
+print("Original Array:", arr)
+print("Mean:", np.mean(arr), "| Standard Deviation:", np.std(arr))
+
+print("\n--- 2. Pandas Operations ---")
+data = {
+    'Employee': ['Alice', 'Bob', 'Charlie', 'David', 'Eve'],
+    'Department': ['HR', 'IT', 'IT', 'Finance', 'HR'],
+    'Salary': [50000, 75000, 68000, 90000, 55000]
+}
+df = pd.DataFrame(data)
+print("DataFrame Head:\n", df.head())
+print("\nIT Department Employees Only:\n", df[df['Department'] == 'IT'])
+
+print("\n--- 3. Matplotlib Visualization ---")
+plt.figure(figsize=(8, 4))
+plt.bar(df['Employee'], df['Salary'], color=['blue', 'green', 'green', 'orange', 'blue'])
+plt.title("Employee Salaries by Department")
+plt.xlabel("Employee Name")
+plt.ylabel("Salary (USD)")
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.show()

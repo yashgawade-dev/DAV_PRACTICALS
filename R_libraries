@@ -1,0 +1,25 @@
+# ---------------------------------------------------------
+# Experiment 7: Visualization in R using two different libraries
+# ---------------------------------------------------------
+
+# --- Library 1: Base R Graphics (Built-in) ---
+# We will create a simple Histogram using the built-in 'mtcars' dataset
+print("Generating Base R Plot...")
+
+hist(mtcars$mpg, 
+     col = "lightblue", 
+     border = "black",
+     main = "Base R: Histogram of Miles Per Gallon", 
+     xlab = "Miles Per Gallon (MPG)")
+
+# --- Library 2: ggplot2 ---
+# (Note: If your lab computer doesn't have it, run install.packages("ggplot2") first)
+library(ggplot2)
+
+print("Generating ggplot2 Plot...")
+
+# We will create a Scatter Plot using the built-in 'iris' dataset
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point(size = 3) +
+  ggtitle("ggplot2: Sepal Length vs Sepal Width") +
+  theme_minimal()
